@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -17,7 +17,29 @@ public class Player : MonoBehaviour
     public float acceleration = 0.5f;  //hizlanma hizi 
     public bool isSlowingDown = false;
     public bool isAccelerating = true;
+    public bool isAstar;
 
+    private Vector3 targetPosition; // Oyuncunun gitmesi gereken hedef pozisyon
+    private int currentNodeIndex = 0; // Şu anda üzerinde bulunulan yol düğümünün indeksi
+    private List<Node> path; // Oyuncunun takip edeceği yol
+
+    // Yolun bitip bitmediğini kontrol eden metot
+    public bool IsPathFinished()
+    {
+        return path == null || currentNodeIndex >= path.Count;
+    }
+
+    // Oyuncunun takip edeceği yolu ayarlayan metot
+    public void SetPath(List<Node> newPath)
+    {
+        path = newPath; // Yeni yolu belirle
+        currentNodeIndex = 0; // İlk düğümden başla
+        if (path.Count > 0)
+        {
+            // Définir la position cible en fixant Y à 1
+            targetPosition = new Vector3(path[currentNodeIndex].WorldPosition.x, 1, path[currentNodeIndex].WorldPosition.z);
+        }
+    }
 
     public void GidilcekYer(Vector3 hedefNoktasi)
     {
@@ -37,6 +59,13 @@ public class Player : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, hedefNoktasi, currentSpeed * Time.deltaTime);
 
+    }
+
+    // Oyuncuyu hedefe doğru hareket ettiren metot
+    public void MoveToTarget(Vector3 target)
+    {
+        LookToTarget(target); // Hedefe dön
+        transform.position = Vector3.MoveTowards(transform.position, target, currentSpeed * Time.deltaTime); // Hedefe doğru hareket et
     }
 
     public void LookToTarget(Vector3 target)
@@ -124,6 +153,42 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(isAstar)
+        {
+
+            // Oyuncunun takip edebileceği bir yol varsa hedef pozisyona doğru hareket et
+            if (path != null && path.Count > 0)
+            {
+                // Hızlanma veya yavaşlama durumuna göre hız güncellemesi
+                if (isAccelerating)
+                {
+                    currentSpeed = Mathf.Min(maxSpeed, currentSpeed + acceleration * Time.deltaTime); // Maksimum hızı aşma
+                }
+                else if (isSlowingDown)
+                {
+                    currentSpeed = Mathf.Max(0, currentSpeed - deceleration * Time.deltaTime); // Hızı sıfırın altına düşürme
+                }
+
+                MoveToTarget(targetPosition); // Hedefe doğru hareket et
+
+                // Hedef düğüme ulaşılıp ulaşılmadığını kontrol et
+                if (Vector3.Distance(transform.position, targetPosition) < 0.1f) // Eşik değeri (mesafe kontrolü)
+                {
+                    currentNodeIndex++; // Sonraki düğüme geç
+                    if (currentNodeIndex < path.Count)
+                    {
+                        // Définir la position cible en fixant Y à 1
+                        targetPosition = new Vector3(path[currentNodeIndex].WorldPosition.x, 1, path[currentNodeIndex].WorldPosition.z);
+
+                    }
+                    else
+                    {
+                        Debug.Log("Yolun sonuna ulaşıldı!"); // Yolun bittiğini bildir
+                        path = null; // Yol bilgisini sıfırla
+                    }
+                }
+            }
+        }
         GameKontrol();
     }
 

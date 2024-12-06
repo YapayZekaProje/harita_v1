@@ -18,7 +18,7 @@ public class Grid : MonoBehaviour
     public List<Node> path1 = new List<Node>();
 
 
-    private void Start()
+    public void Start()
     {
         NodeDinameter = NodeRadius * 2;
         GridSizeX = Mathf.RoundToInt(GridWroldSize.x / NodeDinameter);

@@ -6907,7 +6907,7 @@ Transform:
   m_GameObject: {fileID: 250044188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 116.79, y: 2.24, z: 17.15}
+  m_LocalPosition: {x: -2.209999, y: 2.24, z: 58.15}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23764,6 +23764,7 @@ GameObject:
   - component: {fileID: 898578638}
   - component: {fileID: 898578637}
   - component: {fileID: 898578636}
+  - component: {fileID: 898578639}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -23804,6 +23805,7 @@ MonoBehaviour:
     m_Bits: 64
   GridWroldSize: {x: 300, y: 260}
   NodeRadius: 2
+  yoluCiz: 1
 --- !u!4 &898578638
 Transform:
   m_ObjectHideFlags: 0
@@ -23819,6 +23821,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1004783643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &898578639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898578635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da8d24d7d0df5143a7a28db2e54459f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeker: {fileID: 182064489}
+  target: {fileID: 250044192}
+  driveable: 1
 --- !u!1001 &900067229
 PrefabInstance:
   m_ObjectHideFlags: 0

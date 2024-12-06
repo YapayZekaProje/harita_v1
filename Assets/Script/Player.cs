@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 
 
+
 public class Player : MonoBehaviour
 {
     public TextMeshProUGUI speedText;
@@ -22,6 +23,14 @@ public class Player : MonoBehaviour
     private Vector3 targetPosition; // Oyuncunun gitmesi gereken hedef pozisyon
     private int currentNodeIndex = 0; // Şu anda üzerinde bulunulan yol düğümünün indeksi
     private List<Node> path; // Oyuncunun takip edeceği yol
+
+    private AudioSource gazAudioSource;
+
+    private void Start()
+    {
+        gazAudioSource = GetComponent<AudioSource>();
+
+    }
 
     // Yolun bitip bitmediğini kontrol eden metot
     public bool IsPathFinished()
@@ -148,13 +157,37 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (currentSpeed == maxSpeed)
+        {
+            gazAudioSource.pitch = Mathf.Lerp(gazAudioSource.pitch, Random.Range(1.5f, 1.7f), currentSpeed / maxSpeed);
+        }
+        else if (currentSpeed != 0)
+        {
+            gazAudioSource.pitch = Mathf.Lerp(0.42f, 1.7f, currentSpeed / maxSpeed);
 
-    }
+            if (!gazAudioSource.isPlaying)
+            {
+                gazAudioSource.Play();
+            }
+        }
+
+        else
+        {
+            gazAudioSource.pitch = Mathf.Lerp(0.42f, 1.7f, currentSpeed / maxSpeed);
+            gazAudioSource.volume = 0.2f;
+
+        }
+
+    
+
+
+}
 
     private void Update()
     {
         if(isAstar)
         {
+           
 
             // Oyuncunun takip edebileceği bir yol varsa hedef pozisyona doğru hareket et
             if (path != null && path.Count > 0)

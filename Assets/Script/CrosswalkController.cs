@@ -8,7 +8,7 @@ public class CrosswalkController : MonoBehaviour
     public List<PedestrianController> pedestrians; // Hareket ettirilecek yayalar
     private bool isVehicleClose = false;   // Araç yaya geçidine yakın mı?
 
-    private int pedestrianCount = 0;       // Crosswalk'taki yaya sayısı
+    public int pedestrianCount = 0;       // Crosswalk'taki yaya sayısı
     public int PedestrianCount // Getter ile dışarıdan okunabilir
     {
         get { return pedestrianCount; }

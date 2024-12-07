@@ -4,6 +4,7 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using TMPro;
 using Unity.VisualScripting;
+using System.Collections;
 
 
 
@@ -14,38 +15,43 @@ public class Player : MonoBehaviour
     public float currentSpeed;
     private float moveSpeed = 5;
     public float maxSpeed;
-    public float deceleration = 0.2f; // YavaÅŸlama hÄ±zÄ±
+    public float deceleration = 0.3f; // Yavaþlama hýzý
     public float acceleration = 0.5f;  //hizlanma hizi 
     public bool isSlowingDown = false;
     public bool isAccelerating = true;
     public bool isAstar;
 
     private Vector3 targetPosition; // Oyuncunun gitmesi gereken hedef pozisyon
-    private int currentNodeIndex = 0; // Åžu anda Ã¼zerinde bulunulan yol dÃ¼ÄŸÃ¼mÃ¼nÃ¼n indeksi
-    private List<Node> path; // Oyuncunun takip edeceÄŸi yol
+    private int currentNodeIndex = 0; // Þu anda üzerinde bulunulan yol düðümünün indeksi
+    private List<Node> path; // Oyuncunun takip edeceði yol
+
+    public float baseTurnSpeed = 50f; // Temel dönüþ hýzý (derece/saniye)
+    private float turnSpeed; // Dönüþ hýzýný sabit
+    private Quaternion targetRotation; // Hedef rotayý saklayan deðiþken
+    private bool isTurning = false; // Dönüþ yapýlýp yapýlmadýðý kontrolü
 
     private AudioSource gazAudioSource;
 
     private void Start()
     {
         gazAudioSource = GetComponent<AudioSource>();
-
+        SpeedTextUpdate();  // baþlangýçta hýz metnini güncelle
     }
 
-    // Yolun bitip bitmediÄŸini kontrol eden metot
+    // Yolun bitip bitmediðini kontrol eden metot
     public bool IsPathFinished()
     {
         return path == null || currentNodeIndex >= path.Count;
     }
 
-    // Oyuncunun takip edeceÄŸi yolu ayarlayan metot
+    // Oyuncunun takip edeceði yolu ayarlayan metot
     public void SetPath(List<Node> newPath)
     {
         path = newPath; // Yeni yolu belirle
-        currentNodeIndex = 0; // Ä°lk dÃ¼ÄŸÃ¼mden baÅŸla
+        currentNodeIndex = 0; // Ýlk düðümden baþla
         if (path.Count > 0)
         {
-            // DÃ©finir la position cible en fixant Y Ã  1
+            // Définir la position cible en fixant Y à 1
             targetPosition = new Vector3(path[currentNodeIndex].WorldPosition.x, 1, path[currentNodeIndex].WorldPosition.z);
         }
     }
@@ -68,71 +74,105 @@ public class Player : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, hedefNoktasi, currentSpeed * Time.deltaTime);
 
+        LookToTarget(hedefNoktasi); // Hedefe doðru yavaþça dönecek
     }
 
-    // Oyuncuyu hedefe doÄŸru hareket ettiren metot
+    // Oyuncuyu hedefe doðru hareket ettiren metot
     public void MoveToTarget(Vector3 target)
     {
-        LookToTarget(target); // Hedefe dÃ¶n
-        transform.position = Vector3.MoveTowards(transform.position, target, currentSpeed * Time.deltaTime); // Hedefe doÄŸru hareket et
+        LookToTarget(target); // Hedefe dön
+        transform.position = Vector3.MoveTowards(transform.position, target, currentSpeed * Time.deltaTime); // Hedefe doðru hareket et
     }
 
     public void LookToTarget(Vector3 target)
     {
         Vector3 direction = target - transform.position;
 
-        // EÄŸer hedefe Ã§ok yakÄ±n deÄŸilse
+        // Eðer hedefe çok yakýn deðilse
         if (direction.magnitude > 0.1f)
         {
-            direction.y = 0;  // y ekseninde dÃ¶nmeyi engelliyoruz
+            direction.y = 0;  // y ekseninde dönmeyi engelliyoruz
 
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            targetRotation = Quaternion.LookRotation(direction);
 
-            // Mevcut rotasyonu al ve yalnÄ±zca Y eksenini ayarla
+            // Mevcut rotasyonu al ve yalnýzca Y eksenini ayarla
             Vector3 currentRotation = transform.rotation.eulerAngles;
             targetRotation = Quaternion.Euler(currentRotation.x, targetRotation.eulerAngles.y, currentRotation.z);
 
-            // ArabayÄ± sadece Y ekseninde hedefe bakacak ÅŸekilde yumuÅŸakÃ§a dÃ¶ndÃ¼r
+            // Arabayý sadece Y ekseninde hedefe bakacak þekilde yumuþakça döndür
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+
+            // Dönüþ hýzýný sabit tutalým, dönüþ yaparken hýzla orantýlý yapalým
+            turnSpeed = Mathf.Lerp(baseTurnSpeed, baseTurnSpeed * 1.5f, currentSpeed / maxSpeed);  // Hýzla orantýlý dönüþ
+
+            // Eðer dönüþ hala yapýlýyorsa, rotayý yavaþça hedefe doðru döndür
+            if (!isTurning)
+            {
+                StartCoroutine(SmoothTurn()); // Yumuþak dönüþ baþlat
+            }
         }
+    }
+
+    private IEnumerator SmoothTurn()
+    {
+        isTurning = true;
+
+        // Dönüþ baþladýðýnda yavaþça dön
+        float timeElapsed = 20f;
+        float turnDuration = 3f; // Dönüþ süresi (saniye)
+
+        // Hedef rotaya kademeli geçiþ saðlamak için
+        Quaternion initialRotation = transform.rotation;
+
+        while (timeElapsed < turnDuration)
+        {
+            timeElapsed += Time.deltaTime;
+
+            // Yavaþça hedef rotaya dönüyoruz
+            transform.rotation = Quaternion.Slerp(initialRotation, targetRotation, timeElapsed / turnDuration);
+            yield return null;
+        }
+
+        // Dönüþ tamamlandýktan sonra
+        isTurning = false;
     }
 
     private void GameKontrol()
     {
         Vector3 newPosition = transform.position;
 
-        // YukarÄ± ok tuÅŸu z ekseninde artÄ±rma yapar
+        // Yukarý ok tuþu z ekseninde artýrma yapar
         if (Input.GetKey(KeyCode.UpArrow))
         {
             newPosition.z += moveSpeed * Time.deltaTime;
         }
 
-        // AÅŸaÄŸÄ± ok tuÅŸu z ekseninde azaltma yapar
+        // Aþaðý ok tuþu z ekseninde azaltma yapar
         if (Input.GetKey(KeyCode.DownArrow))
         {
             newPosition.z -= moveSpeed * Time.deltaTime;
         }
 
-        // SaÄŸ ok tuÅŸu x ekseninde artÄ±rma yapar
+        // Sað ok tuþu x ekseninde artýrma yapar
         if (Input.GetKey(KeyCode.RightArrow))
         {
             newPosition.x += moveSpeed * Time.deltaTime;
         }
 
-        // Sol ok tuÅŸu x ekseninde azaltma yapar
+        // Sol ok tuþu x ekseninde azaltma yapar
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             newPosition.x -= moveSpeed * Time.deltaTime;
         }
 
-        // Yeni pozisyonu gÃ¼ncelle
+        // Yeni pozisyonu güncelle
         transform.position = newPosition;
 
         if (Input.GetKeyDown(KeyCode.KeypadPlus))
             ++Time.timeScale;
         if (Input.GetKeyDown(KeyCode.KeypadMinus))
-            --Time.timeScale    ;
- 
+            --Time.timeScale;
+
 
 
         SpeedTextUpdate();
@@ -178,46 +218,46 @@ public class Player : MonoBehaviour
 
         }
 
-    
 
 
-}
+
+    }
 
     private void Update()
     {
-        if(isAstar)
+        if (isAstar)
         {
-           
 
-            // Oyuncunun takip edebileceÄŸi bir yol varsa hedef pozisyona doÄŸru hareket et
+
+            // Oyuncunun takip edebileceði bir yol varsa hedef pozisyona doðru hareket et
             if (path != null && path.Count > 0)
             {
-                // HÄ±zlanma veya yavaÅŸlama durumuna gÃ¶re hÄ±z gÃ¼ncellemesi
+                // Hýzlanma veya yavaþlama durumuna göre hýz güncellemesi
                 if (isAccelerating)
                 {
-                    currentSpeed = Mathf.Min(maxSpeed, currentSpeed + acceleration * Time.deltaTime); // Maksimum hÄ±zÄ± aÅŸma
+                    currentSpeed = Mathf.Min(maxSpeed, currentSpeed + acceleration * Time.deltaTime); // Maksimum hýzý aþma
                 }
                 else if (isSlowingDown)
                 {
-                    currentSpeed = Mathf.Max(0, currentSpeed - deceleration * Time.deltaTime); // HÄ±zÄ± sÄ±fÄ±rÄ±n altÄ±na dÃ¼ÅŸÃ¼rme
+                    currentSpeed = Mathf.Max(0, currentSpeed - deceleration * Time.deltaTime); // Hýzý sýfýrýn altýna düþürme
                 }
 
-                MoveToTarget(targetPosition); // Hedefe doÄŸru hareket et
+                MoveToTarget(targetPosition); // Hedefe doðru hareket et
 
-                // Hedef dÃ¼ÄŸÃ¼me ulaÅŸÄ±lÄ±p ulaÅŸÄ±lmadÄ±ÄŸÄ±nÄ± kontrol et
-                if (Vector3.Distance(transform.position, targetPosition) < 0.1f) // EÅŸik deÄŸeri (mesafe kontrolÃ¼)
+                // Hedef düðüme ulaþýlýp ulaþýlmadýðýný kontrol et
+                if (Vector3.Distance(transform.position, targetPosition) < 0.1f) // Eþik deðeri (mesafe kontrolü)
                 {
-                    currentNodeIndex++; // Sonraki dÃ¼ÄŸÃ¼me geÃ§
+                    currentNodeIndex++; // Sonraki düðüme geç
                     if (currentNodeIndex < path.Count)
                     {
-                        // DÃ©finir la position cible en fixant Y Ã  1
+                        // Définir la position cible en fixant Y à 1
                         targetPosition = new Vector3(path[currentNodeIndex].WorldPosition.x, 1, path[currentNodeIndex].WorldPosition.z);
 
                     }
                     else
                     {
-                        Debug.Log("Yolun sonuna ulaÅŸÄ±ldÄ±!"); // Yolun bittiÄŸini bildir
-                        path = null; // Yol bilgisini sÄ±fÄ±rla
+                        Debug.Log("Yolun sonuna ulaþýldý!"); // Yolun bittiðini bildir
+                        path = null; // Yol bilgisini sýfýrla
                     }
                 }
             }

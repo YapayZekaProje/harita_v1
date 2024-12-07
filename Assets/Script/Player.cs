@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
         isTurning = true;
 
         // Dönüþ baþladýðýnda yavaþça dön
-        float timeElapsed = 20f;
+        float timeElapsed = 30f;
         float turnDuration = 3f; // Dönüþ süresi (saniye)
 
         // Hedef rotaya kademeli geçiþ saðlamak için

@@ -50,7 +50,7 @@ public class Pathfinding : MonoBehaviour
             return;
         }
 
-        string filePath = @"C:\Users\ylmzh\OneDrive\Desktop\ornek_proje-main\ornek_proje-main\Assets\Script\GridInfo.json";
+        string filePath = @"GridInfo.json";
         List<Dictionary<string, object>> gridInfoList = new List<Dictionary<string, object>>();
 
         float nodeRadius = grid.NodeRadius; // Node yarýçapýný alýn

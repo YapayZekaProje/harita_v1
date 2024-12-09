@@ -4143,37 +4143,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
   m_PrefabInstance: {fileID: 154844686}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &155541430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 155541431}
-  m_Layer: 0
-  m_Name: Raycast Uc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &155541431
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155541430}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 2.72}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &157172179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 114102968392964687, guid: 8933e808e908349488f204e0c0a77325, type: 3}
@@ -5479,7 +5448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -6793,7 +6762,7 @@ Transform:
   m_GameObject: {fileID: 250044188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.209999, y: 2.24, z: 78.15}
+  m_LocalPosition: {x: 55.79, y: 2.24, z: 3.1500015}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7247,7 +7216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -13160,7 +13129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -16093,7 +16062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 515019829}
@@ -17448,7 +17417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1244851184}
@@ -17799,7 +17768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -19012,7 +18981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -19290,7 +19259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -20168,7 +20137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -23338,7 +23307,6 @@ Transform:
   - {fileID: 494119180}
   - {fileID: 63686627}
   - {fileID: 2137410789}
-  - {fileID: 1444730812}
   - {fileID: 1858695455}
   - {fileID: 1401019963}
   - {fileID: 1443990983}
@@ -23541,6 +23509,7 @@ GameObject:
   - component: {fileID: 898578636}
   - component: {fileID: 898578639}
   - component: {fileID: 898578640}
+  - component: {fileID: 898578641}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -23557,9 +23526,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 898578635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2834dc9c75264ad408f69a5af4640b8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b98b5d4264a5a347ba7628dc246abc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seeker: {fileID: 2091832091}
+  target: {fileID: 250044192}
 --- !u!114 &898578637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23577,7 +23548,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   GridWroldSize: {x: 300, y: 260}
-  NodeRadius: 2
+  NodeRadius: 3
   yoluCiz: 1
 --- !u!4 &898578638
 Transform:
@@ -23601,7 +23572,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898578635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8da8d24d7d0df5143a7a28db2e54459f, type: 3}
   m_Name: 
@@ -23624,6 +23595,20 @@ MonoBehaviour:
   grid: {fileID: 0}
   startPoint: {fileID: 2091832091}
   targetPoint: {fileID: 250044192}
+--- !u!114 &898578641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898578635}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b98b5d4264a5a347ba7628dc246abc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeker: {fileID: 2091832091}
+  target: {fileID: 250044192}
 --- !u!1001 &900067229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23749,7 +23734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1443990984}
@@ -24474,7 +24459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -25241,7 +25226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 403662122}
@@ -25680,7 +25665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1806356246}
@@ -25994,7 +25979,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -116.48
+      value: -117
       objectReference: {fileID: 0}
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26002,7 +25987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -84.83
+      value: -84
       objectReference: {fileID: 0}
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26038,7 +26023,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1780195972}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       insertIndex: -1
@@ -27035,7 +27023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -29773,7 +29761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 2083871000}
@@ -30629,7 +30617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1858695456}
@@ -31070,7 +31058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -31246,7 +31234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 2137410790}
@@ -31327,7 +31315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1630277081}
@@ -32350,7 +32338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 2051927069}
@@ -33100,86 +33088,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d4cfcf659200d7548b90a5580c3ab18f, type: 3}
   m_PrefabInstance: {fileID: 1247078294}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1248588015
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 880720029}
-    m_Modifications:
-    - target: {fileID: -4720535539113630595, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336366603759285772, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336366603759285772, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: endPoint.x
-      value: 52.05357
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336366603759285772, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: endPoint.z
-      value: 52.05357
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 168.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 91.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6584613354768528393, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_Name
-      value: casual_Female_G (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052400387863182304, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6584613354768528393, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1444730813}
-  m_SourcePrefab: {fileID: 100100000, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
 --- !u!1001 &1249145043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34094,7 +34002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -35342,7 +35250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -35472,7 +35380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -36489,7 +36397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -36977,7 +36885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -37410,7 +37318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -38686,7 +38594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -39075,7 +38983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -40554,11 +40462,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
   m_PrefabInstance: {fileID: 1438189181}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1440066842 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6584613354768528393, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-  m_PrefabInstance: {fileID: 1248588015}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1441457716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40876,30 +40779,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
   m_PrefabInstance: {fileID: 1444590089}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1444730812 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-  m_PrefabInstance: {fileID: 1248588015}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1444730813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440066842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46187988b8e7b854888ccba2bddc0c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 2
-  reachDistance: 0.5
-  defaultWaitDuration: 2
-  trafficLight: {fileID: 0}
 --- !u!1001 &1444811102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43046,7 +42925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -43381,7 +43260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -44624,7 +44503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1260343404}
@@ -47044,7 +46923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1401019964}
@@ -47332,7 +47211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1612022154}
@@ -47467,7 +47346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1778033424}
@@ -47664,7 +47543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -48010,7 +47889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -48148,7 +48027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -48764,7 +48643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1872617692}
@@ -49129,7 +49008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -49158,6 +49037,37 @@ MonoBehaviour:
   reachDistance: 0.5
   defaultWaitDuration: 2
   trafficLight: {fileID: 0}
+--- !u!1 &1780195971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780195972}
+  m_Layer: 0
+  m_Name: Raycast Uc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1780195972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780195971}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.7, z: 2.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2091832091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1783074754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50641,7 +50551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1574865627}
@@ -50900,7 +50810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -51403,7 +51313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -51750,7 +51660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 738323693}
@@ -52624,7 +52534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -54545,7 +54455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -54711,7 +54621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -55263,7 +55173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -55349,7 +55259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -57346,7 +57256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -57724,7 +57634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 929982254}
@@ -58153,7 +58063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -58298,7 +58208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 738323693}
@@ -58722,7 +58632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -58878,7 +58788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1778033424}
@@ -58900,7 +58810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -59093,7 +59003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1869540350}
@@ -59633,7 +59543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -59662,7 +59572,8 @@ MonoBehaviour:
   acceleration: 7
   isSlowingDown: 0
   isAccelerating: 1
-  isAstar: 0
+  isAstar: 1
+  baseTurnSpeed: 90
 --- !u!82 &2091832088
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59773,7 +59684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 15
-  rayOrigin: {fileID: 155541431}
+  rayOrigin: {fileID: 1780195972}
 --- !u!4 &2091832091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
@@ -60249,7 +60160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 1816321535}
@@ -60272,7 +60183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187966ef698120845a52d9b65c7f4a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 2091832086}
   detectionRadius: 30
   pedestrians:
   - {fileID: 0}
@@ -61325,4 +61236,3 @@ SceneRoots:
   - {fileID: 397123135}
   - {fileID: 2066647996}
   - {fileID: 992310542}
-  - {fileID: 155541431}

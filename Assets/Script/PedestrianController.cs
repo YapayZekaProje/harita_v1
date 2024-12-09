@@ -17,7 +17,7 @@ public class PedestrianController : MonoBehaviour
     {
         if (isMoving && !isWaiting)
         {
-            MoveTowardsWaypoint();
+            MoveTowardsWaypoint(); 
         }
     }
 

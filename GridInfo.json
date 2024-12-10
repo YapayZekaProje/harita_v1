@@ -2024,7 +2024,7 @@
       "gridY": 30,
       "worldX": -111.0,
       "worldZ": 53.0,
-      "walkable": true
+      "walkable": false
     },
     {
       "gridX": 6,
@@ -3550,7 +3550,7 @@
       "gridY": 33,
       "worldX": -81.0,
       "worldZ": 71.0,
-      "walkable": true
+      "walkable": false
     },
     {
       "gridX": 11,

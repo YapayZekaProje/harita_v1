@@ -162,19 +162,19 @@ public class Grid : MonoBehaviour
 
         if (yoluCiz)
         {
-            DrawOnlyPath();
+          DrawOnlyPath();
         }
 
         // YORUM SATIRLI DENE SONRA KALDIR DENE
-     //   DrawPath();
-        
+   //    DrawPath();
+
     }
 
     void DrawPath()
     {
         if (grid != null)
         {
-            Node PlayerNode = NodeFromWorldPoint(player.position);
+     //       Node PlayerNode = NodeFromWorldPoint(player.position);
 
 
 
@@ -225,23 +225,23 @@ public class Grid : MonoBehaviour
                 }
             }
 
-            // 4. Adım: Oyuncunun bulunduğu düğüm (cyan renkte çizilir)
-            if (PlayerNode != null)
-            {
-                Gizmos.color = Color.cyan;
-                Gizmos.DrawCube(PlayerNode.WorldPosition, Vector3.one * (NodeDinameter - 0.1f));
-            }
+            //// 4. Adım: Oyuncunun bulunduğu düğüm (cyan renkte çizilir)
+            //if (PlayerNode != null)
+            //{
+            //    Gizmos.color = Color.cyan;
+            //    Gizmos.DrawCube(PlayerNode.WorldPosition, Vector3.one * (NodeDinameter - 0.1f));
+            //}
         }
 
-        // 5. Adım: Hedefe giden yolu siyah renkte çiz
-        if (path1 != null && path1.Count > 0)
-        {
-            foreach (Node node in path1)
-            {
-                Gizmos.color = Color.black;
-                Gizmos.DrawCube(node.WorldPosition, Vector3.one * (NodeDinameter - 0.1f));
-            }
-        }
+        //// 5. Adım: Hedefe giden yolu siyah renkte çiz
+        //if (path1 != null && path1.Count > 0)
+        //{
+        //    foreach (Node node in path1)
+        //    {
+        //        Gizmos.color = Color.black;
+        //        Gizmos.DrawCube(node.WorldPosition, Vector3.one * (NodeDinameter - 0.1f));
+        //    }
+        //}
     }
 
 

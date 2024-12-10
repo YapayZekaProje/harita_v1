@@ -73,6 +73,37 @@ public class griddy : MonoBehaviour
                     continue;
                 }
 
+                if (!currentNode.kavsak && !neighbour.kavsak)
+                {
+                    // Yön kontrolü
+                    if (currentNode.gridY < neighbour.gridY && !currentNode.right) // Yukarı hareket (right == true)
+                    {
+                        continue;
+                    }
+                    if (currentNode.gridX < neighbour.gridX && !currentNode.right) // Sağa hareket (right == true)
+                    {
+                        continue;
+                    }
+                    if (currentNode.gridY > neighbour.gridY && !currentNode.left) // Aşağı hareket (left == true)
+                    {
+                        continue;
+                    }
+                    if (currentNode.gridX > neighbour.gridX && !currentNode.left) // Sola hareket (left == true)
+                    {
+                        continue;
+                    }
+                }
+
+                // Right'tan direkt Left'e veya Left'ten direkt Right'a geçişi engelle
+                if (currentNode.right && neighbour.left && !neighbour.kavsak)
+                {
+                    continue;
+                }
+                if (currentNode.left && neighbour.right && !neighbour.kavsak)
+                {
+                    continue;
+                }
+
                 // Calculate heuristic cost for the neighbor
                 neighbour.hCost = GetDistance(neighbour, targetNode);
 

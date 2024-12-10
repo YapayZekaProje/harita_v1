@@ -50,6 +50,37 @@ public class UniformCostSearch : MonoBehaviour
                     continue;
                 }
 
+                if (!currentNode.kavsak && !neighbor.kavsak)
+                {
+                    // Yön kontrolü
+                    if (currentNode.gridY < neighbor.gridY && !currentNode.right) // Yukarı hareket (right == true)
+                    {
+                        continue;
+                    }
+                    if (currentNode.gridX < neighbor.gridX && !currentNode.right) // Sağa hareket (right == true)
+                    {
+                        continue;
+                    }
+                    if (currentNode.gridY > neighbor.gridY && !currentNode.left) // Aşağı hareket (left == true)
+                    {
+                        continue;
+                    }
+                    if (currentNode.gridX > neighbor.gridX && !currentNode.left) // Sola hareket (left == true)
+                    {
+                        continue;
+                    }
+                }
+
+                // Right'tan direkt Left'e veya Left'ten direkt Right'a geçişi engelle
+                if (currentNode.right && neighbor.left && !neighbor.kavsak)
+                {
+                    continue;
+                }
+                if (currentNode.left && neighbor.right && !neighbor.kavsak)
+                {
+                    continue;
+                }
+
                 // Komşuya yeni maliyeti hesapla
                 int newCostToNeighbor = currentNode.gCost + GetDistance(currentNode, neighbor);
 
